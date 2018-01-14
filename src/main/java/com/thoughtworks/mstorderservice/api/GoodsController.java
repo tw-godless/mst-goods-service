@@ -19,4 +19,9 @@ public class GoodsController {
     public List<Goods> getAll() {
         return goodsService.getAll();
     }
+
+    @GetMapping(value = "/{id}")
+    public Goods getGoodDetailById(@PathVariable("id") String id){
+        return goodsService.getGoodDetailById(id);
+    }
 }
