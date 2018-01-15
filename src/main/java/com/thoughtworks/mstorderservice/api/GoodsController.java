@@ -21,6 +21,7 @@ public class GoodsController {
     }
 
     @GetMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Goods getGoodDetailById(@PathVariable("id") String id){
         return goodsService.getGoodDetailById(id);
     }

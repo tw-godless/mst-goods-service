@@ -1,0 +1,1 @@
+ALTER TABLE t_goods MODIFY column amount INTEGER;

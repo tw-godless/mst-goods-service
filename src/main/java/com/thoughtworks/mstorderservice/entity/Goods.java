@@ -21,5 +21,5 @@ public class Goods {
     private String name;
     private String description;
     private Double price;
-    private Double amount;
+    private Integer amount;
 }
