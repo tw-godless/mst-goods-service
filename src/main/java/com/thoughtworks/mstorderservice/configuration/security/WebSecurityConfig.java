@@ -31,7 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().xssProtection().and().httpStrictTransportSecurity();
 
         http.authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/health").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/authentication").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/goods/{goods_id}").permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
